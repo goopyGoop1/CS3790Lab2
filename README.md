@@ -23,7 +23,7 @@ First, compile both `boss.cpp` and `worker.cpp` into executable files.
 g++ -o bos boss.cpp
 g++ -o wrk worker.cpp  you MUST compile the  worker this way to ensure it works.
 
-#### Running 
+### Running 
 
 When ./bos 4 300 to run program unless you've named the worker .exe file wrk it will fail. Or you can change this line in the code to [execl("./wrk", "./wkr",to_string(lower_bound).c_str(),to_string(upper_bound_for_worker).c_str(), (char*)NULL);
  perror("execl failed");] to whatever you name the worker files .exe this change will ensure your code runs. 
