@@ -20,7 +20,10 @@ This project implements a simple boss-worker computing model in C++ to find all 
 First, compile both `boss.cpp` and `worker.cpp` into executable files.
 
 
+###
 g++ -o bos boss.cpp
+
+###
 g++ -o wrk worker.cpp  you MUST compile the  worker this way to ensure it works.
 
 ### Running 
