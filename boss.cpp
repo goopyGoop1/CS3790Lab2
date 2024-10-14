@@ -35,14 +35,20 @@ int main(int argc, char *argv[]) {
         if (i == (num_of_workers - 1)) {
             upper_bound_for_worker += remain;
         }
-
+	
+	
+	// Fork a new process
         pid_t pid = fork();
         if (pid == 0) {
             // Child process code:
+            // Replace the child process image with the worker executable
             execl("./wrk", "./wkr",to_string(lower_bound).c_str(),to_string(upper_bound_for_worker).c_str(), (char*)NULL);
+            
+            // If execl fails, print an error message
             perror("execl failed");
             return 1;
         } else if (pid < 0) {
+            // If fork fails, print an error message
             std::cerr << "Fork failed" << endl;
             return 1;
         }
